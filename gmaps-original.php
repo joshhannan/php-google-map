@@ -149,7 +149,7 @@
                echo "var marker = new google.maps.Marker({
                   position: coordinates_" . $i . ",
                   map: map_".$i.",
-                  title: 'Toner Cable Equipment, Inc.'
+                  title: 'The Grand Hotel Cape May'
                });";
             endforeach;
          else :
@@ -169,15 +169,12 @@
             };";
             echo "map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
             directionsDisplay.setMap(map);";
-            if( $marker_url != '' ) :
-               echo "var image = '" . $marker_url . "';";
-            endif;
             echo "var myLatLng = new google.maps.LatLng(" . $location . ");
             var jewelMarker = new google.maps.Marker({
                position: myLatLng,
                map: map";
                if( $marker_url != '' ) :
-                  echo ", icon: image";
+                  echo ", icon:  '" . $marker_url . "'";
                endif;
             echo "});";
             echo "directionsDisplay.setPanel(document.getElementById('g-directions'));";
